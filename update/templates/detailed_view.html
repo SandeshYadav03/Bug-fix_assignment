@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Employee Details</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+ <h2>Employee Dashboard</h2>
+    <a href="{% url 'Uploadform' %} " class="btn btn-light btn-lg me-2">
+     Add Employee <i class="fa-solid fa-trash-can"></i></a>
+     <a href="/" class="btn btn-light btn-lg me-2">
+        Back <i class="fa-solid fa-trash-can"></i></a>
+     
+ <table class="table table-bordered">
+     <thead>
+       <tr>
+         <th>Employee ID</th>
+         <th>Firstname</th>
+         <th>Lastname</th>
+         <th>MiddleName</th>
+         <th>Mobile</th>
+         <th>Alternate Mobile</th>
+         <th>Email</th>
+         <th>Gender</th>
+         <th>DOB</th>
+         <th>Maritual_status</th>
+         <th>Blood</th>
+       </tr>
+     </thead>
+     <tbody>
+    
+     <tr>
+         <td>{{emp.id}}</td>
+         <td>{{emp.FirstName}}</td>
+         <td>{{emp.MiddleName}}</td>
+         <td>{{emp.LastName}}</td>
+         <td>{{emp.Mobile}}</td>
+         <td>{{emp.AlterMobile}}</td>
+         <td>{{emp.Email}}</td>
+         <td>{{emp.gender}}</td>
+         <td>{{emp.DOB}}</td>
+         <td>{{emp.Maritual_status}}</td>
+         <td>{{emp.Blood}}</td>
+        </tr>
+     </tbody>
+     
+</body>
+</html>

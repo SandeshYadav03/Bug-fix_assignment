@@ -1,0 +1,44 @@
+   <!DOCTYPE html>
+   <html lang="en">
+<head>
+  <title>Employee Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+<div class="container">
+   <h2 style="margin-left:400px">Employee Dashboard</h2>
+    <a href="{% url 'Uploadform'  %} " class="btn btn-light btn-lg me-2">
+     Add Employee <i class="fa-solid fa-trash-can"></i></a>
+     
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Details</th>
+            <th>Employee ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Contact</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for objs in obj  %}
+        <tr>
+            <td><a href="{% url 'Detailed_View' objs.id %}" class="btn btn-default btn-sm" style="border:none";><span class="glyphicon glyphicon-eye-open"></span></a></td>
+            <td>{{objs.id}}</td>
+            <td>{{objs.FirstName}}</td> 
+            <td>{{objs.LastName}}</td>
+            <td>{{objs.Mobile}}</td>
+            <td>{{objs.Email}}</td>
+           </tr>
+           {% endfor %}
+        </tbody>
+        
+</body>
+</html>
