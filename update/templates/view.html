@@ -25,6 +25,8 @@
             <th>Lastname</th>
             <th>Contact</th>
             <th>Email</th>
+            <th>Update</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -36,9 +38,12 @@
             <td>{{objs.LastName}}</td>
             <td>{{objs.Mobile}}</td>
             <td>{{objs.Email}}</td>
+            <td><a href="{% url 'update' objs.id %}" class="btn btn-primary" style="border:none">Update</a></td>
+            <td><a href="{% url 'delete' objs.id %}" class="btn btn-danger " style="border:none">Delete</a></td>
+
            </tr>
            {% endfor %}
         </tbody>
-        
+      
 </body>
 </html>

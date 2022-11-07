@@ -22,3 +22,18 @@ def Uploadform(request):
 def Detailed_View(request,id):
     emp=AddEmployee.objects.get(id=id)
     return render(request,'detailed_view.html',{'emp':emp})
+
+def UpdateForm(request,id):
+    obj=AddEmployee.objects.get(id=id)
+    form=EmployeeForms(instance=obj)
+    if request.method =='POST':
+        form=EmployeeForms(request.POST,instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    return render(request, "forms.html",{"form":form})
+
+def Delete(request,id):
+    obj=AddEmployee.objects.get(id=id)
+    obj.delete()
+    return redirect('/')
